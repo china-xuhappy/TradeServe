@@ -1,4 +1,3 @@
-from tkinter import messagebox
 from binance.websocket.websocket_client import BinanceWebsocketClient
 import time, json
 from sqlalchemy import Column, String, Integer, create_engine, ForeignKey, and_
