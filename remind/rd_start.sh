@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # 定义你的Python项目的启动命令和相关信息
-project_dir="/root/xuhappy/TradeServe"
-rd_main_script="/remind/rd_main.py"
+project_dir="/root/xuhappy/TradeServe/remind"
+rd_main_script="/rd_main.py"
 
 
 # 检查是否已经有相同的Python项目在运行

@@ -33,23 +33,13 @@ symbols = {
         'buyQuantityDecimal': 3, # 买入小数
     },
 }
-plans = {
-    '2000-2005': {
-        'idp': 'sfsdf333'
-    },
-    '1990-1992': {
-        'idp': 'sfsdf333'
-    }
-}
 
 class KdataTips:
 
     def __init__(self, db):
         wss_url = "wss://fstream.binance.com/ws"
         self.volCcyQuotes = {}
-        self.binance = UMFutures(key='c3k2NQMHnq8gI4SMPVmhZ06dhZ5VMYqr3TlWokvzKbuNbl74gnmGDbmmfxHx0yFX',
-                                 secret='c5UJ5JPUJchqQSvPmFWgW1hTVvkteoTBfP5hsVaiBkoeWg0VINAF7nc62ELWjFsE')
-
+        self.binance = UMFutures(key='c3k2NQMHnq8gI4SMPVmhZ06dhZ5VMYqr3TlWokvzKbuNbl74gnmGDbmmfxHx0yFX', secret='c5UJ5JPUJchqQSvPmFWgW1hTVvkteoTBfP5hsVaiBkoeWg0VINAF7nc62ELWjFsE')
         self.db = db
 
         for symbol in symbols.keys():
@@ -75,7 +65,7 @@ class KdataTips:
         symbol = params['symbol']
         nprice = params['nprice']
 
-        for i in range(2):
+        for i in range(3):
             if _type == 'heat':
                 requests.post('http://152.32.243.56/addRemind', json={
                     "instId": symbol,
@@ -90,6 +80,7 @@ class KdataTips:
                     "remark": params['remark']
                 })
             time.sleep(3)
+
     def __ws_message_handler(self, _, message):
         message = json.loads(message)
         k = message['k']

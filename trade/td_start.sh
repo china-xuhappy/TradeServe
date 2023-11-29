@@ -1,7 +1,7 @@
 #!/bin/bash
 
-project_dir="/root/xuhappy/TradeServe"
-ws_script="/trade/td_main.py"
+project_dir="/root/xuhappy/TradeServe/trade"
+ws_script="/td_main.py"
 
 
 if pgrep -f "python3 $project_dir/$ws_script" > /dev/null; then
